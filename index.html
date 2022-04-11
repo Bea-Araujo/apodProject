@@ -8,14 +8,29 @@
     <title>ADOP Project</title>
 </head>
 
-<body>
-    <header></header>
+<body id="root">
+    <header>
+        <h1>APOD API</h1>
+        <nav>
+            <a href="">github</a>
+            <a href="">linkedIn</a>
+        </nav>
+    </header>
     <main>
+        <article>
+            <h1>Selecione uma data</h1>
+        </article>
         <form action="">
-            <input type="date" name="" id="">
+            <input type="date" name="dateSetter" id="dateSetter" min="1995-06-16">
+            <input type="submit" value="Ok" id="submit-btn">
         </form>
+        <section id="api-response">
+        </section>
     </main>
     <footer></footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
