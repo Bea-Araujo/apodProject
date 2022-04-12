@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/reset.css">
     <title>ADOP Project</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+
 </head>
 
 <body id="root">
@@ -19,14 +24,17 @@
         </nav>
     </header>
     <main>
-        <article>
-            <h1>Selecione uma data</h1>
-        </article>
-        <form action="">
-            <input type="date" name="dateSetter" id="dateSetter" min="1995-06-16">
-            <input type="submit" value="Ok" id="submit-btn">
-        </form>
-        <section id="api-response">
+        <section class="esquerda">
+            <article>
+                <h1>Selecione uma data</h1>
+            </article>
+            <form>
+                <input type="date" name="dateSetter" id="dateSetter" min="1995-06-16">
+                <input type="submit" value="Ok" id="submit-btn">
+            </form>
+        </section>
+
+        <section id="api-response" class="direita">
         </section>
     </main>
     <footer></footer>
