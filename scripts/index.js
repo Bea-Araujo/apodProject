@@ -11,10 +11,10 @@ currentDate = `${year}-${month}-${day}`;
 
 $("#submit-btn").click(function (event) {
     event.preventDefault();
+    $('#api-response').html('');
     // $("#root").css('background-color', 'blue')
     const choosenDate = $("#dateSetter").val();
     if (choosenDate > currentDate) {
-        $('#api-response').html('');
         const invalidDate = document.createElement('p');
         $(invalidDate).text('Data inválida!').css('color', 'red');
         $('#api-response').append(invalidDate);
@@ -23,8 +23,6 @@ $("#submit-btn").click(function (event) {
         $.ajax({
             url: `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${choosenDate}`,
             success: function (response) {
-                $('#api-response').html('');
-
                 const title = document.createElement('h2');
                 $(title).text(`${response.title}`)
                 $('#api-response').append(title)
