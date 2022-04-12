@@ -1,3 +1,9 @@
+body {
+    background-image: url('../images/pictures/nightSky.png');
+    background-size: contain;
+    background-position: center;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -11,4 +17,8 @@ header {
 header nav img {
     margin: 0 5px 0 0;
     width: 2em;
+}
+
+main {
+    color: white;
 }
