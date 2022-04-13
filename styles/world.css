@@ -1,0 +1,24 @@
+.earth {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border-radius: 50%;
+    background-image: url('../images/pictures/mapa-mundi.png');
+    background-size: cover;
+    background-position: 0%;
+    box-shadow: -20px -20px 70px 5px rgba(15, 0, 24, 0.897) inset,
+        0 0 20px 2px rgba(88, 2, 138, 0.842);
+    animation: spin 5s linear infinite;
+    transition: 1s;
+    right: 30%;
+}
+
+@keyframes spin {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 236%;
+    }
+}

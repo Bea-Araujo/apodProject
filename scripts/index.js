@@ -12,6 +12,8 @@ currentDate = `${year}-${month}-${day}`;
 $("#submit-btn").click(function (event) {
     event.preventDefault();
     $('#api-response').html('');
+    $('.direita').css('visibility', 'visible');
+
     // $("#root").css('background-color', 'blue')
     const choosenDate = $("#dateSetter").val();
     if (choosenDate > currentDate) {
@@ -27,21 +29,26 @@ $("#submit-btn").click(function (event) {
                 $(title).text(`${response.title}`)
                 $('#api-response').append(title)
 
+                const div = document.createElement('div');
                 if (response.media_type == 'image') {
                     const picture = document.createElement('picture')
                     const img = document.createElement('img');
-                    $(img).attr('src', `${response.url}`)
-                    $(picture).append(img)
-                    $('#api-response').append(picture)
+                    $(img).attr('src', `${response.url}`);
+                    $(picture).append(img);
+                    $(div).append(picture);
+                    // $('#api-response').append(picture)
                 } else if (response.media_type == 'video') {
                     const iframe = document.createElement('iframe');
                     $(iframe).attr('src', `${response.url}`);
-                    $('#api-response').append(iframe);
+                    $(div).append(iframe);
+                    // $('#api-response').append(iframe);
                 }
 
                 const description = document.createElement('p');
                 $(description).text(`${response.explanation}`)
-                $('#api-response').append(description)
+                // $('#api-response').append(description)
+                $(div).append(description);
+                $('#api-response').append(div);
                 console.log(response);
             }
         })
