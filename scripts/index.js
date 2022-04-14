@@ -1,5 +1,4 @@
 
-let date = '2022-01-11';
 const apiKey = 'JpvYcrSZt9TwWowd9NfaXf8jFml7WqTVRY9G2UIg';
 
 let currentDate = new Date();
@@ -14,7 +13,6 @@ $("#submit-btn").click(function (event) {
     $('#api-response').html('');
     $('.direita').css('visibility', 'hidden');
 
-    // $("#root").css('background-color', 'blue')
     const choosenDate = $("#dateSetter").val();
     if (choosenDate > currentDate) {
         $('#api-response').css('visibility', 'visible');
@@ -27,7 +25,6 @@ $("#submit-btn").click(function (event) {
         setTimeout(() => {
             setInterval(() => {
                 if (opacity < 0) return
-                console.log(opacity)
                 $('#api-response').css('opacity', `${opacity}%`)
                 opacity--
             }, 30);
@@ -38,7 +35,6 @@ $("#submit-btn").click(function (event) {
             url: `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${choosenDate}`,
             success: function (response) {
                 $('#loading').css('display', 'flex');
-                // $('#api-response').css('visibility', 'hiddden');
 
                 const title = document.createElement('h2');
                 $(title).text(`${response.title}`)
@@ -51,12 +47,12 @@ $("#submit-btn").click(function (event) {
                     $(img).attr('src', `${response.hdurl}`);
                     $(picture).append(img);
                     $(div).append(picture);
-                    // $('#api-response').append(picture)
+
                 } else if (response.media_type == 'video') {
                     const iframe = document.createElement('iframe');
                     $(iframe).attr('src', `${response.url}`);
                     $(div).append(iframe);
-                    // $('#api-response').append(iframe);
+
                 }
 
                 const description = document.createElement('p');
@@ -72,19 +68,11 @@ $("#submit-btn").click(function (event) {
                 closeBtn.classList.add('closeBtn')
                 closeBtn.addEventListener('click', close);
 
-                //$(closeBtn).attr('id', 'closeBtn')
-                // $("#closeBtn").addClass('closeBtn')
-                // $("#closeBtn").attr('onclick', close())
-
-
-
-                // $('#api-response').fadeIn(3000)
                 let opacity = 0;
                 console.log('a')
                 setTimeout(function () {
 
                     setInterval(() => {
-
                         if (opacity == 0) {
                             $('#api-response').append(title);
                             $('#api-response').append(div);
@@ -92,7 +80,6 @@ $("#submit-btn").click(function (event) {
                             opacity++
                         }
                         else if (opacity <= 100) {
-
                             $('#loading').css('display', `none`)
                             $('#api-response').css('visibility', 'visible');
                             $('#api-response').css('opacity', `${opacity}%`)
@@ -101,10 +88,7 @@ $("#submit-btn").click(function (event) {
                             return
                         }
                     }, 15);
-                    console.log('b')
-                }, 900)
-                console.log('c')
-
+                }, 900);
             }
         })
     }
@@ -113,8 +97,6 @@ $("#submit-btn").click(function (event) {
 
 
 function close() {
-    // const closeBtn = document.querySelector('#closeBtn');
-    // closeBtn.style.color = 'red';
     fadeCard()
 }
 
