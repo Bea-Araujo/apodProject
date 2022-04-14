@@ -14,7 +14,7 @@ $("#submit-btn").click(function (event) {
     $('.direita').css('visibility', 'hidden');
 
     const choosenDate = $("#dateSetter").val();
-    if (choosenDate > currentDate) {
+    if (choosenDate > currentDate || choosenDate < '1995-06-16') {
         $('#api-response').css('visibility', 'visible');
         $('#api-response').css('opacity', '100%')
         const invalidDate = document.createElement('p');
