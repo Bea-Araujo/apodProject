@@ -8,7 +8,7 @@
     background-position: 0%;
     box-shadow: -20px -20px 70px 5px rgba(15, 0, 24, 0.897) inset,
         0 0 20px 2px rgba(88, 2, 138, 0.842);
-    animation: spin 20s linear infinite;
+    animation: spin 10s linear infinite;
     transition: 1s;
     right: 30%;
 }

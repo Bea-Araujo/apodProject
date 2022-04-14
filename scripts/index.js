@@ -37,7 +37,7 @@ $("#submit-btn").click(function (event) {
         $.ajax({
             url: `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${choosenDate}`,
             success: function (response) {
-                $('#loading').css('display', 'block');
+                $('#loading').css('display', 'flex');
                 // $('#api-response').css('visibility', 'hiddden');
 
                 const title = document.createElement('h2');
@@ -54,7 +54,7 @@ $("#submit-btn").click(function (event) {
                     // $('#api-response').append(picture)
                 } else if (response.media_type == 'video') {
                     const iframe = document.createElement('iframe');
-                    $(iframe).attr('src', `${response.hdurl}`);
+                    $(iframe).attr('src', `${response.url}`);
                     $(div).append(iframe);
                     // $('#api-response').append(iframe);
                 }
@@ -100,7 +100,7 @@ $("#submit-btn").click(function (event) {
                         } else {
                             return
                         }
-                    }, 30);
+                    }, 15);
                     console.log('b')
                 }, 900)
                 console.log('c')

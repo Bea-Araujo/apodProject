@@ -25,6 +25,7 @@ main {
     width: 100%;
     height: 86vh;
     align-items: center;
+    position: relative;
 }
 
 .esquerda {
@@ -144,37 +145,8 @@ main {
 
 .loading {
     position: absolute;
-    height: 100px;
-    width: 100px;
-    background-color: coral;
-    right: 50%;
-    display: none;
+    top: 40%;
+    right: 40%;
     z-index: 500;
-    animation: boop 1s infinite;
-}
-
-@keyframes boop {
-    0% {
-        opacity: 100%;
-    }
-
-    50% {
-        opacity: 0%;
-    }
-
-    100% {
-        opacity: 100%;
-    }
-}
-
-@keyframes blink {
-    0% {
-        color: white;
-        background-color: black;
-    }
-
-    100% {
-        color: black;
-        background-color: white;
-    }
+    display: none;
 }

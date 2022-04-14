@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading {
+            position: relative;
+            height: 500px;
+            width: 500px;
+            background-color: rgb(199, 199, 199);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .planet1 {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+            border-radius: 50%;
+            top: 0;
+        }
+
+        .orbit {
+            position: absolute;
+            top: -55px;
+            border: 6px solid yellowgreen;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            transform: rotate3d(2, 0.5, 0, 76deg);
+            animation: rotacionar 1s linear alternate-reverse infinite;
+        }
+
+        .up {
+            position: absolute;
+            height: 50px;
+            width: 100px;
+            border-radius: 100px 100px 0 0;
+            background-color: blueviolet;
+            overflow: hidden;
+            top: 0;
+        }
+
+        @keyframes rotacionar {
+            0% {
+                transform: rotate3d(2, 0.5, 0, 76deg)
+            }
+
+            100% {
+                transform: rotate3d(2, -0.5, 0, 76deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loading">
+        <div class="planet1"></div>
+        <div class="orbit"></div>
+        <div class="satelite"></div>
+        <div class="up"></div>
+    </div>
+
+    <script src="./teste.js"></script>
+</body>
+
+</html>
