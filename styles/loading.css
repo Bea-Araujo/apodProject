@@ -1,0 +1,48 @@
+.loading {
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.planet {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(62, 11, 112);
+    border-radius: 50%;
+    top: 0;
+}
+
+.orbit {
+    position: absolute;
+    top: -55px;
+    border: 6px solid rgb(145, 207, 20);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    transform: rotate3d(2, 0.5, 0, 76deg);
+    animation: rotacionar 1s linear alternate-reverse infinite;
+    box-shadow: 0 0 25px 16px rgb(145 207 20), inset 0 0 8px 8px rgb(145 207 20);
+}
+
+.up {
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    border-radius: 100px 100px 0 0;
+    background-color: rgb(62, 11, 112);
+    overflow: hidden;
+    top: 0;
+}
+
+@keyframes rotacionar {
+    0% {
+        transform: rotate3d(2, 0.5, 0, 76deg)
+    }
+
+    100% {
+        transform: rotate3d(2, -0.5, 0, 76deg)
+    }
+}
