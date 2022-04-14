@@ -82,18 +82,6 @@ main {
     animation: blink 3s linear alternate infinite;
 }
 
-@keyframes blink {
-    0% {
-        color: white;
-        background-color: black;
-    }
-
-    100% {
-        color: black;
-        background-color: white;
-    }
-}
-
 .esquerda input[type=submit] {
     width: 70%;
     font-family: 'Wallpoet', cursive;
@@ -120,6 +108,18 @@ main {
     padding: 5px;
 }
 
+.direita button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-size: 1em;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 900;
+}
+
 .direita div {
     display: flex;
     align-items: center;
@@ -140,4 +140,41 @@ main {
 
 .direita p {
     max-width: 30em;
+}
+
+.loading {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: coral;
+    right: 50%;
+    display: none;
+    z-index: 500;
+    animation: boop 1s infinite;
+}
+
+@keyframes boop {
+    0% {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes blink {
+    0% {
+        color: white;
+        background-color: black;
+    }
+
+    100% {
+        color: black;
+        background-color: white;
+    }
 }
