@@ -66,3 +66,17 @@
         margin: 0;
     }
 }
+
+@media (min-width: 2559px) {
+    main {
+        justify-content: center;
+    }
+
+    .direita {
+        width: fit-content;
+    }
+
+    .direita {
+        font-size: 2rem;
+    }
+}
